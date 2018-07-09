@@ -1,0 +1,50 @@
+1.在github上新建一个仓库
+2.在本机新建文件夹然后执行
+  $ git init
+3.将本机仓库与服务器仓库关联
+  $ git remote add origin git@github.com:hahah/ftpmanage.git
+4.空文件夹不能push 所以我们 添加一个文件  
+  $ git add readerme.txt
+  warning: LF will be replaced by CRLF in readerme.txt.
+  The file will have its original line endings in your working directory.
+  如果报下面的错误 执行
+  $ git config --global core.autocrlf true   #true的位置放你想使autocrlf成为的结果，true，false或者input
+5.提交文件
+  $ git commit -m "注释"
+6.push前需要先更新(也可以使用 git pull更新)
+  $ git pull --rebase origin master
+7.推送到github服务器
+  git push -u origin master
+
+=========================================================================
+  $ git log      #查看日志
+  $ git status   #查看当前库状态（是否有更新）
+  $ git commit -a -m "注释"  #提交当前修改的全部文件
+  $ git rm test.txt          #删除文件
+  $ git reset --hard HEAD^         #回退到上个版本
+  $ git reset --hard HEAD~3        #回退到前3次提交之前，以此类推，回退到n次提交之前
+  $ git reset --hard commit_id     #退到/进到 指定commit的sha码
+  $ git push origin HEAD --force   #强推到远程
+  $ git diff HEAD -- readerme.txt  #本地文件和远程仓储比较
+  $ git reset HEAD readerme.txt    #放弃修改 
+  $ git checkout -- readerme.txt   #回退当时远程仓库版本
+=========================================================================
+分支管理
+1.$ git checkout -b dev   # -b 创建并切换
+2.$ git branch            #列出所有分支 当前分支会有星号标识
+3.$ git checkout master   #切换到指定分支
+4.$ git merge dev         #合并dev到当前分支
+5.$ git push -u origin master #提交合并后的分支到远程服务器
+6.$ git branch -d dev         #删除本地分支
+7.$ git push origin :dev      #删除远程分支
+=========================================================================
+
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
+
+
+

@@ -1,0 +1,93 @@
+
+		vcard
+
+"BEGIN:VCARD\r\n" + 
+						   "FN:姓名:李大为\r\n"+
+						   "ORG:公司:第嘉学社	部门:研发部\r\n"+
+						   "TITLE:JAVA后台开发工程师\r\n" + 
+						   "TEL;WORK;VOICE:98765432198\r\n"+
+						   "TEL;HOME;VOICE:12345678911\r\n"+
+						   "TEL;CELL;VOICE:18603369235\r\n"+
+						   "ADR;WORK:秦皇岛金梦海湾一栋一单元1504\r\n"+
+						   "ADR;HOME:海港区 东方明珠城 G4-1-1504\r\n"+
+						   "URL:http://www.dijiaxueshe.com\r\n"+
+						   "EMAIL;HOME:532231254@qq.com\r\n" + 
+						   "PHOTO;VALUE=uri:http://www.dijiaxueshe.com/images/logo.jpg\r\n" + 
+						   "END:VCARD";
+
+
+********************************************************
+
+
+git
+
+//教程网址
+https://www.liaoxuefeng.com/
+
+
+//下载网址 
+https://git-scm.com/downloads
+
+
+//github注册
+https://github.com/
+
+
+ls：显示文件和目录列表(list)
+cd 切换目录（change directory）
+pwd 显示当前工作目录（print working directory）
+mkdir 创建目录（make directoriy）
+cp 复制文件或目录（copy）
+touch 创建空文件	
+mkdir 创建目录（make directoriy）
+cp 复制文件或目录（copy）
+mv 移动文件或目录、文件或目录改名（move）
+rm 删除文件（remove）
+	-r 同时删除该目录下的所有文件（recursive）
+	-f 强制删除文件或目录（force）
+rmdir 删除空目录（remove directoriy）
+cat显示文本文件内容 （catenate）
+
+vi命令:
+https://zhidao.baidu.com/question/332242228.html
+
+
+********************************************************
+
+
+详细讲解:
+
+因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+首先，选择一个合适的地方，创建一个空目录：
+$ mkdir learngit
+$ cd learngit
+$ pwd
+
+第二步，通过git init命令把这个目录变成Git可以管理的仓库：
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），细心的读者可以发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。
+如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。
+
+言归正传，现在我们编写一个readme.txt文件，内容如下：
+
+Git is a version control system.
+Git is free software.
+
+$ git add readme.txt
+
+$ git commit -m "wrote a readme file"
+[master (root-commit) eaadf4e] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+简单解释一下git commit命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
+
+目前，在GitHub上的这个learngit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
+$ git remote add origin git@github.com:michaelliao/learngit.git
+
+$ git push -u origin master
+
+
